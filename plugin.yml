@@ -1,0 +1,8 @@
+main: me.goukan.cmdshop.Core
+name: CmdShop
+version: 2.0
+author: Goukan/Exevan
+description: Testowy plugin do sms shopa
+commands:
+ shop:
+  description: CmdShop plugin command
