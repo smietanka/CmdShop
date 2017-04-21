@@ -10,6 +10,7 @@ import me.goukan.cmdshop.Interfaces.ILogger;
 import me.goukan.cmdshop.Interfaces.IReader;
 import me.goukan.cmdshop.Interfaces.IService;
 import me.goukan.cmdshop.ServiceTypes.DotPayService;
+import me.goukan.cmdshop.ServiceTypes.MicroSmsService;
 import me.goukan.cmdshop.Types.Constans;
 import me.goukan.cmdshop.Types.Commands.CommandShop;
 
@@ -35,6 +36,7 @@ public class Core extends JavaPlugin {
 		
 		myConfig.addDefault("sms.currentService", "dotpay");
 		myConfig.addDefault("sms.clientId", 0);
+		myConfig.addDefault("sms.serviceId", 0);
 		myConfig.options().copyDefaults(true);
 		saveConfig();
 		
@@ -58,6 +60,9 @@ public class Core extends JavaPlugin {
 		{
 		case "dotpay":
 			myService = new DotPayService(myConfig);
+			break;
+		case "microsms":
+			myService = new MicroSmsService(myConfig);
 			break;
 			default:
 				myLogger.WriteLog("Nie ma takiego typu serwisu. Zmien w config.yml");
