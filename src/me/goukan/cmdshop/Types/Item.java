@@ -22,11 +22,12 @@ public class Item {
 	private String SmsPrice = "";
 	private String SmsNumber = "";
 	private String SmsCode = "";
+	private String SmsServiceId;
 	private List<String> Commands = new ArrayList<String>();
 	private List<String> SuccessMessages = new ArrayList<String>();
 	private String ItemMaterial = "";
 	
-	public Item(String name, List<String> desc, String smsPrice, String smsNumber, String smsCode, List<String> commands, List<String> successMsgs, String material)
+	public Item(String name, List<String> desc, String smsPrice, String smsNumber, String smsCode, List<String> commands, List<String> successMsgs, String material, String smsServiceId)
 	{
 		this.Id = objCounter++;
 		this.Name = name;
@@ -37,6 +38,7 @@ public class Item {
 		this.Commands = commands;
 		this.SuccessMessages = successMsgs;
 		this.ItemMaterial = material;
+		this.SmsServiceId = smsServiceId;
 	}
 	public String getMaterial()
 	{
@@ -90,5 +92,8 @@ public class Item {
 		ItemStack result =  new ItemStack(Material.getMaterial(material));
 		
 		return result;
+	}
+	public String getSmsServiceId() {
+		return SmsServiceId;
 	}
 }

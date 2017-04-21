@@ -10,6 +10,7 @@ import me.goukan.cmdshop.Interfaces.ILogger;
 import me.goukan.cmdshop.Interfaces.IReader;
 import me.goukan.cmdshop.Interfaces.IService;
 import me.goukan.cmdshop.ServiceTypes.DotPayService;
+import me.goukan.cmdshop.ServiceTypes.HomePayService;
 import me.goukan.cmdshop.ServiceTypes.MicroSmsService;
 import me.goukan.cmdshop.Types.Constans;
 import me.goukan.cmdshop.Types.Commands.CommandShop;
@@ -63,6 +64,9 @@ public class Core extends JavaPlugin {
 			break;
 		case "microsms":
 			myService = new MicroSmsService(myConfig);
+			break;
+		case "homepay":
+			myService = new HomePayService(myConfig);
 			break;
 			default:
 				myLogger.WriteLog("Nie ma takiego typu serwisu. Zmien w config.yml");

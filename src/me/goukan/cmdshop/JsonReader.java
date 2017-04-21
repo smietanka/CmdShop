@@ -48,7 +48,7 @@ public class JsonReader implements IReader {
         			fw = new FileWriter(saveTo, true);
         	        PrintWriter pw = new PrintWriter(fw);
 
-        	        pw.println("{\"Items\": [{\"Name\":\"test\", \"Description\": [\"jakis opis\"], \"SmsPrice\": \"cena\", \"SmsNumber\": \"numer na jaki wyslac sms\", \"SmsCode\": \"tresc smsa\", \"Commands\": [], \"SuccessMessages\": [\"kupiles usluge\"], \"ItemMaterial\":\"DIAMOND_AXE\"}]}");
+        	        pw.println("{\"Items\": [{\"Name\":\"test\", \"Description\": [\"jakis opis\"], \"SmsServiceId\": \"id uslugi (zostaw puste jesli niepotrzebne)\", \"SmsPrice\": \"cena\", \"SmsNumber\": \"numer na jaki wyslac sms\", \"SmsCode\": \"tresc smsa\", \"Commands\": [], \"SuccessMessages\": [\"kupiles usluge\"], \"ItemMaterial\":\"DIAMOND_AXE\"}]}");
         	        pw.flush();
         	        pw.close();
         	        this.myLogger.WriteLog("Zapisalem pusty obiekt JSON'a do pliku. Nalezy go skonfigurowac.");
@@ -69,6 +69,7 @@ public class JsonReader implements IReader {
     			String number = (String) item.get("SmsNumber");
     			String code = (String) item.get("SmsCode");
     			String material = (String) item.get("ItemMaterial");
+    			String serviceId = (String) item.get("SmsServiceId");
     			
     			List<String> createdCommands = getListStringFromJsonObj(item, "Commands");
     			List<String> successMsg = getListStringFromJsonObj(item, "SuccessMessages");
@@ -80,7 +81,7 @@ public class JsonReader implements IReader {
     			}
     			else
     			{
-    				Item myItem = new Item(name, desc, price, number, code, createdCommands, successMsg, material);
+    				Item myItem = new Item(name, desc, price, number, code, createdCommands, successMsg, material, serviceId);
         			allItems.add(myItem);
     			}
     		}
