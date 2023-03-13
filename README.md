@@ -24,7 +24,7 @@ Po wpisaniu komemdy /shop <numer sługi lub nazwa usługi>, np. /shop 1 jest ró
 
 Po wpisaniu komendy /shop <numer lub nazwa usługi> <kod zwrotny sms> 
 Gdy kod jest zły<br />
-![zly](http://wrzuc.se/images/582b73d581ae3.png)
+![obraz](https://user-images.githubusercontent.com/17428659/224572739-e1a886d9-4067-41df-be2f-9bfa6ac246ee.png)
 
 Gdy kod jest dobry<br />
 ![dobry](http://wrzuc.se/images/582b748a7ac0f.png)
